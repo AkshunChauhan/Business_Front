@@ -2,12 +2,12 @@ import React from 'react';
 import { Card, Typography, TextField, Button, Box } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Register = () => {
+const RegisterCompany = () => {
   const navigate = useNavigate();
 
-  const handleRegister = () => {
+  const handleRegisterCompany = () => {
     // Simulate a registration by redirecting the user
-    navigate('/login');
+    navigate('/business-dashboard');
   };
 
   return (
@@ -19,20 +19,20 @@ const Register = () => {
         height: '100vh',
       }}
     >
-      <Card sx={{ padding: '2rem', width: '100%', maxWidth: '400px' }}>
+      <Card sx={{ padding: '2rem', width: '100%', maxWidth: '500px' }}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Register
+          Register Your Company
         </Typography>
         <form>
           <TextField
-            label="Full Name"
+            label="Company Name"
             variant="outlined"
             fullWidth
             margin="normal"
             required
           />
           <TextField
-            label="Email"
+            label="Company Email"
             variant="outlined"
             fullWidth
             margin="normal"
@@ -40,27 +40,24 @@ const Register = () => {
             type="email"
           />
           <TextField
-            label="Password"
+            label="Industry"
             variant="outlined"
             fullWidth
             margin="normal"
-            required
-            type="password"
           />
           <TextField
-            label="Confirm Password"
+            label="Company Website"
             variant="outlined"
             fullWidth
             margin="normal"
-            required
-            type="password"
+            type="url"
           />
-          <Button variant="contained" color="primary" fullWidth onClick={handleRegister} sx={{ marginTop: '1rem' }}>
-            Register
+          <Button variant="contained" color="primary" fullWidth onClick={handleRegisterCompany} sx={{ marginTop: '1rem' }}>
+            Register Company
           </Button>
         </form>
         <Typography variant="body2" sx={{ marginTop: '1rem' }}>
-          Already have an account?{' '}
+          Already have a company registered?{' '}
           <Link to="/login" style={{ textDecoration: 'none' }}>
             Login here
           </Link>
@@ -70,4 +67,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterCompany;

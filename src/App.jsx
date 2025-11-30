@@ -5,7 +5,6 @@ import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Login from './pages/Auth/Login.jsx';
 import Register from './pages/Auth/Register.jsx';
-import { Container } from '@mui/material';
 import './App.css';
 
 const App = () => {
@@ -13,14 +12,14 @@ const App = () => {
     <Router>
       <div className="App">
         <Navbar />
-        <Container maxWidth="lg" sx={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
+        <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>
-        </Container>
+        </main>
       </div>
     </Router>
   );

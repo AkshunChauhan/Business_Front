@@ -1,52 +1,50 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Button from '../../components/ui/Button';
-import Card from '../../components/ui/Card';
-import Input from '../../components/ui/Input';
-import { Typography, Box } from '@mui/material';
+import React from 'react';
+import { Card, Typography, TextField, Button, Box } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Implement your login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
+    // Simulate a login by redirecting the user
+    navigate('/select-role');
   };
 
   return (
     <Box
       sx={{
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
         justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
       }}
     >
-      <Card>
-        <Typography variant="h4" component="h2" gutterBottom>
-          Welcome Back!
+      <Card sx={{ padding: '2rem', width: '100%', maxWidth: '400px' }}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Login
         </Typography>
-        <Typography variant="body2" color="textSecondary" gutterBottom>
-          Sign in to continue to your account.
-        </Typography>
-        <form onSubmit={(e) => e.preventDefault()}>
-          <Input
+        <form>
+          <TextField
+            label="Email"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            required
             type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
           />
-          <Input
+          <TextField
+            label="Password"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            required
             type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleLogin}>Login</Button>
+          <Button variant="contained" color="primary" fullWidth onClick={handleLogin} sx={{ marginTop: '1rem' }}>
+            Login
+          </Button>
         </form>
-        <Typography variant="body2">
+        <Typography variant="body2" sx={{ marginTop: '1rem' }}>
           Don't have an account?{' '}
           <Link to="/register" style={{ textDecoration: 'none' }}>
             Register here

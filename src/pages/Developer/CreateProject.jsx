@@ -1,19 +1,45 @@
 import React from 'react';
-import Card from '../../components/ui/Card';
-import Input from '../../components/ui/Input';
-import Button from '../../components/ui/Button';
+import { Typography, Container, Paper, TextField, Button, Box } from '@mui/material';
 
 const CreateProject = () => {
   return (
-    <Card>
-      <h2>Create a New Project</h2>
-      <form>
-        <Input type="text" placeholder="Project Name" />
-        <Input type="text" placeholder="Project Summary" />
-        <Input type="text" placeholder="Link to Project" />
-        <Button>Create Project</Button>
-      </form>
-    </Card>
+    <Container maxWidth="sm">
+      <Paper sx={{ padding: '2rem', marginTop: '2rem' }}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Create a New Project
+        </Typography>
+        <form>
+          <TextField
+            label="Project Name"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            required
+          />
+          <TextField
+            label="Project Summary"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            required
+            multiline
+            rows={4}
+          />
+          <TextField
+            label="Project Website or Repository"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            type="url"
+          />
+          <Box sx={{ marginTop: '1rem' }}>
+            <Button variant="contained" color="primary" type="submit">
+              Create Project
+            </Button>
+          </Box>
+        </form>
+      </Paper>
+    </Container>
   );
 };
 
