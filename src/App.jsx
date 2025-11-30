@@ -9,6 +9,7 @@ import SelectRole from './pages/Auth/SelectRole';
 import RegisterCompany from './pages/Business/RegisterCompany';
 import BusinessDashboard from './pages/Business/BusinessDashboard';
 import DeveloperDashboard from './pages/Developer/DeveloperDashboard';
+import CreateProject from './pages/Developer/CreateProject';
 import Requirements from './pages/Requirements/Requirements';
 import SubmitRequirement from './pages/Business/SubmitRequirement';
 
@@ -25,6 +26,8 @@ function App() {
         <Route path="/register-company" element={<RegisterCompany />} />
         <Route path="/business-dashboard" element={<BusinessDashboard />} />
         <Route path="/developer-dashboard" element={<DeveloperDashboard />} />
+        <Route path="/create-project" element={<CreateProject />} />
+        <Route path="/requirements/new" element={<SubmitRequirement />} />
         <Route path="/requirements" element={<Requirements />} />
         <Route path="/requirements/new" element={<SubmitRequirement />} />
       </Routes>

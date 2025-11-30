@@ -36,7 +36,7 @@ const BusinessDashboard = () => {
           </Grid>
         </Grid>
         <Box sx={{ marginTop: '2rem' }}>
-          <Button variant="contained" component={Link} to="/submit-requirement" sx={{ marginRight: '1rem' }}>
+          <Button variant="contained" component={Link} to="/requirements/new" sx={{ marginRight: '1rem' }}>
             Submit a New Requirement
           </Button>
           <Button variant="outlined" component={Link} to="/register-company">
