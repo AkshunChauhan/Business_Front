@@ -27,7 +27,6 @@ function App() {
         <Route path="/business-dashboard" element={<BusinessDashboard />} />
         <Route path="/developer-dashboard" element={<DeveloperDashboard />} />
         <Route path="/create-project" element={<CreateProject />} />
-        <Route path="/requirements/new" element={<SubmitRequirement />} />
         <Route path="/requirements" element={<Requirements />} />
         <Route path="/requirements/new" element={<SubmitRequirement />} />
       </Routes>
